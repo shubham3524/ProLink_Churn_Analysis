@@ -1,95 +1,99 @@
 # 📉 ProLink – Customer Churn Analysis
 
-**ProLink**, a business engagement platform for professionals, has observed a drop in user retention. This project focuses on uncovering the factors contributing to user churn and identifying key customer segments to improve retention strategies and engagement.
+**ProLink**, a platform for business professionals to engage with their customers, recently experienced a noticeable decline in user retention. This project aims to analyze the churn data to uncover user segments and behavior patterns contributing to customer drop-off — helping inform ProLink’s retention strategy.
 
 ---
 
 ## 🎯 Objective
 
-The analysis is designed to uncover patterns around customer churn by exploring:
+Key focus areas in this churn analysis:
 
-- 📅 **Tenure**: How does the time a customer spends on ProLink affect their likelihood to churn?
-- 📦 **Plan Type**: Which subscription plans (Month-to-Month, Half-Yearly, Annual) have the highest churn?
-- 👤 **Customer Type**: Do Entrepreneurs, Influencers, or Startups show higher churn trends?
-- 🧱 **Stage**: How does churn differ between Emerging and Established businesses?
-
-By answering these questions, we aim to guide ProLink in refining its user retention strategy.
+- 📅 **Tenure**: Relationship between time spent using the app and churn probability.
+- 📦 **Plan Type**: Which subscription plan (Month-to-Month, Half-Yearly, Annual) contributes most to churn?
+- 👤 **Customer Type**: Do Entrepreneurs, Influencers, or Startups churn more?
+- 🧱 **Stage**: Do Established or Emerging businesses show higher churn rates?
 
 ---
 
 ## 📊 Dataset Overview
 
-Sheet Name: `Data_CustomerChurn`
+Sheet: `Data_CustomerChurn`
 
 | Column            | Description                                      |
 |-------------------|--------------------------------------------------|
-| `CustomerID`      | Unique customer identifier                       |
+| `CustomerID`      | Unique ID for each customer                      |
 | `CustomerType`    | Entrepreneur, Influencer, or Startup             |
-| `Stage`           | Business stage – Emerging (0) or Established (1) |
-| `Tenure`          | Number of months the customer used the app       |
-| `Plan`            | Month-to-Month, Half-Yearly, or Annual           |
-| `PaymentMethod`   | UPI, Debit Card, or Credit Card                  |
-| `MonthlyCharges`  | Last month's charges                             |
-| `TotalCharges`    | Total charges paid across tenure                 |
-| `Churn`           | "Yes" for churned customers, "No" otherwise      |
+| `Stage`           | Emerging (0) or Established (1)                  |
+| `Tenure`          | Months with ProLink                              |
+| `Plan`            | Subscription term                                |
+| `PaymentMethod`   | UPI, Debit Card, Credit Card                     |
+| `MonthlyCharges`  | Last month’s charges                             |
+| `TotalCharges`    | Lifetime charges                                 |
+| `Churn`           | "Yes" if churned, "No" otherwise                 |
 
 ---
 
-## 🧹 Data Cleaning and Preparation
+## 🧹 Data Cleaning Steps
 
-- Converted numeric columns to correct types (e.g. `Tenure`, `MonthlyCharges`)
-- Removed null or inconsistent entries
-- Re-labeled `Stage` values from binary (0/1) to `Emerging` and `Established`
-- Mapped and grouped churn values
-- Created visual segmentations using pivot tables and custom filters
+- Converted `TotalCharges` and `Tenure` into numeric columns
+- Replaced 0/1 in `Stage` with `Emerging` and `Established`
+- Cleaned nulls and inconsistencies
+- Segmented churned vs non-churned users
+- Created derived fields for dashboard filters
 
 ---
 
-## 📊 Dashboards & Visual Insights
+## 📈 Dashboards & Visuals
 
-### 1. Tenure vs. Churn Behavior  
-Customers with shorter tenures tend to churn more frequently. Loyalty increases with app usage duration.
+### 1. Tenure-Wise Activity Analysis  
+Insight: Majority of churn occurs in short-tenured customers.
 
-![Tenure-wise Activity](./Tenure_active_Inactive.png)
+![Tenure-wise Activity](./Tenure-wise-Active,inactive.png)
 
 ---
 
 ### 2. Tenure-Wise Churn Rate  
-A closer look at churn rates across tenure bands confirms higher drop-offs in the initial months.
+Shorter tenures correlate with higher churn probability.
 
-![Tenure-Wise Churn Rate](./Tenure_wise_churn_rate.png)
-
----
-
-### 3. Plan Type vs. Churn Rate  
-Month-to-month users exhibit the highest churn, while Annual plan users show much higher retention.
-
-![Plan-Wise Churn Rate](./Plan_wise_churn_rate.png)
+![Tenure-Wise Churn Rate](./Tenure_wise_Churn_Rate.png)
 
 ---
 
-### 4. Customer Type & Business Stage vs. Churn  
-Startups and Influencers churn more than Entrepreneurs. Also, Emerging businesses show higher churn compared to Established ones.
+### 3. Plan-Wise Churn Rate  
+Month-to-month users churn the most, while long-term plans show better retention.
 
-![Customer Type & Stage](./Customer_type_Stage_wise_churn_rate.png)
+![Plan-Wise Churn Rate](./Plan_wise_Churn_rate.png)
+
+---
+
+### 4. Customer Type Churn Breakdown  
+Entrepreneurs retain better than Startups and Influencers.
+
+![Customer Type Churn](./CustomerType_wise_Churn_rate.png)
+
+---
+
+### 5. Business Stage Churn Rate  
+Emerging businesses are more prone to churn.
+
+![Stage-Wise Churn](./stage_wise_churn_rate.png)
+
+---
+
+## 💡 Key Insights
+
+- ❗ Churn is highest among users in their first 3–5 months
+- 🔁 Month-to-month customers churn faster than annual customers
+- 🧑‍💼 Entrepreneurs are more loyal; startups require better onboarding
+- 📉 Emerging businesses need more engagement support
 
 ---
 
 ## 🛠 Tools Used
 
-- 📊 Microsoft Excel
-- 📐 Pivot Tables & Conditional Formatting
-- 📈 Line and Bar Graphs
-- 💡 Logical formulas (`IF`, `COUNTIFS`, `AVERAGEIFS`, etc.)
-
----
-
-## 🔍 Key Findings
-
-- Short-tenured users (under 3 months) are most churn-prone
-- Entrepreneurs and Established businesses show the lowest churn
-- Annual and Half-Yearly plans provide better customer retention
-- Startups and Emerging businesses need more onboarding & support focus
+- Microsoft Excel  
+- Pivot Tables, Filters, Formulas  
+- Visualizations using Bar & Line Charts  
 
 ---
 
@@ -97,13 +101,12 @@ Startups and Influencers churn more than Entrepreneurs. Also, Emerging businesse
 
 **Shubham Kumar**  
 📧 shubhamkr3524@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/shubham35/)
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/shubham35/)
 
 ---
 
-## 📌 Next Steps
+## 📌 Future Improvements
 
-- Build churn prediction models using Python or Power BI
-- Create retention scoring framework
-- Recommend data-backed strategies like loyalty programs or plan bundling
-
+- Predictive churn modeling in Python or Power BI  
+- Customer segmentation scoring  
+- Retention action plan using marketing automation  
